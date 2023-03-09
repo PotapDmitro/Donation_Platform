@@ -11,8 +11,14 @@
 
 <body style="margin: 100px 300px 300px; max-width: 1080px">
 
+
+    @yield('HighCharts')
     @yield('content')
     @yield('button-create')
+
+    
+
+
 </body>
 
 </html>
