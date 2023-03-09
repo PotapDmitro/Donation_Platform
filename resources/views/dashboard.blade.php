@@ -1,7 +1,6 @@
 @extends ('layouts.main')
-@section ('content')
-
-<div class="table__container" style="margin: 300px; max-width: 1080px">
+@section('content')
+<div>
     <table class="table">
         <thead>
             <tr style="width: auto">
@@ -13,21 +12,29 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($posts as $post)
+            @foreach ($posts as $post)
             <tr>
-                <td>{{$post->Name}}</td>
-                <td>{{$post->Email}}</td>
-                <td>{{$post->Amount}}</td>
-                <td style="max-width: 400px">{{$post->Message}}</td>
-                <td>{{$post->created_at->format('Y-m-d')}}</td>
+                <td>{{ $post->Name }}</td>
+                <td>{{ $post->Email }}</td>
+                <td>{{ $post->Amount }}</td>
+                <td style="max-width: 400px">{{ $post->Message }}</td>
+                <td>{{ $post->created_at->format('Y-m-d') }}</td>
             </tr>
             @endforeach
         </tbody>
 
     </table>
     <div>
-        {{$posts->links()}}
+        {{ $posts->links() }}
     </div>
+</div>
+@endsection
+
+@section('button-create')
+
+
+<div style="float: right;">
+    <a href="{{route('post.create')}}" class="btn btn-primary">Add one</a>
 </div>
 
 @endsection
