@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'App\Http\Controllers\Dashboard@index');
+// Route::get('/', 'App\Http\Controllers\MainController@index');
+// Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+Route::get('/', 'App\Http\Controllers\DashboardController@index');
+
+Route::get('/create', 'App\Http\Controllers\CreatePostController@create');

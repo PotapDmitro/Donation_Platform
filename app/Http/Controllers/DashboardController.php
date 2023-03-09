@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Donator;
 
-class Dashboard extends Controller
+class DashboardController extends Controller
 {
     public function index()
     {
