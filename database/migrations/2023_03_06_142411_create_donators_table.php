@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->float('amount', 3, 2);
+            $table->double('amount');
             $table->text('message');
             $table->timestamps();
         });
