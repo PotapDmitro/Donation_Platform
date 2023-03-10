@@ -25,10 +25,10 @@
             <tbody>
                 @foreach($posts as $post)
                 <tr>
-                    <td>{{$post->Name}}</td>
-                    <td>{{$post->Email}}</td>
-                    <td>{{$post->Amount}}</td>
-                    <td style="max-width: 400px">{{$post->Message}}</td>
+                    <td>{{$post->name}}</td>
+                    <td>{{$post->email}}</td>
+                    <td>{{$post->amount}}</td>
+                    <td style="max-width: 400px">{{$post->message}}</td>
                     <td>{{$post->created_at->format('Y-m-d')}}</td>
                 </tr>
                 @endforeach
