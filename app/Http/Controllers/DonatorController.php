@@ -2,24 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDonatorRequest;
 use Illuminate\Http\Request;
 use App\Models\Donator;
 
-class PostController extends Controller
+class DonatorController extends Controller
 {
     public function create()
     {
         return view('post.create');
     }
 
-    public function store()
+    public function store(StoreDonatorRequest $request)
     {
-        $data = request()->validate([
-            'Name' => 'string',
-            'Email' => 'email',
-            'Amount' => 'numeric',
-            'Message' => 'string',
-        ]);
+        $data = $request->validate();
         Donator::create($data);
         return redirect()->route('dashboard');
     }
