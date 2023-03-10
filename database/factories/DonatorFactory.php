@@ -17,10 +17,10 @@ class DonatorFactory extends Factory
     public function definition(): array
     {
         return [
-            "Name" => $this->faker->name(),
-            "Email" => $this->faker->email(),
-            "Amount" => random_int(1, 10000),
-            "Message" => $this->faker->text(),
+            "name" => $this->faker->name(),
+            "email" => $this->faker->email(),
+            "amount" => random_int(1, 10000),
+            "message" => $this->faker->text(),
         ];
     }
 }
