@@ -19,7 +19,7 @@ class DonatorFactory extends Factory
         return [
             "name" => $this->faker->name(),
             "email" => $this->faker->email(),
-            "amount" => random_int(1, 10000),
+            "amount" => $this->faker->randomFloat(1, 1000),
             "message" => $this->faker->text(),
         ];
     }
