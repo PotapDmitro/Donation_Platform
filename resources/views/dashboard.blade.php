@@ -40,12 +40,12 @@
 @section ('HighCharts')
 
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
 
 <div id="container"></div>
 
 <script>
-    var amountDate = <?php echo json_encode($amountDate) ?>;
+    var amountDate =;
     Highcharts.chart('container', {
         title: {
             text: "Donation statistics"
@@ -61,12 +61,7 @@
             data: amountDate
         }],
     });
-</script>
-
-
-
-
-
+</script> -->
 
 
 
