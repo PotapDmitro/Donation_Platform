@@ -15,7 +15,7 @@ class DonatorController extends Controller
 
     public function store(StoreDonatorRequest $request)
     {
-        $data = $request->validate();
+        $data = $request->validated();
         Donator::create($data);
         return redirect()->route('dashboard');
     }

@@ -25,7 +25,7 @@ class StoreDonatorRequest extends FormRequest
             'name' => 'string',
             'email' => 'email',
             'amount' => 'numeric',
-            'message' => 'string',
+            'message' => '',
         ];
     }
 }
