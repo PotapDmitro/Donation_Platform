@@ -16,7 +16,7 @@
     @yield('content')
     @yield('button-create')
 
-    
+
 
 
 </body>

@@ -14,10 +14,10 @@
         <tbody>
             @foreach ($posts as $post)
             <tr>
-                <td>{{ $post->Name }}</td>
-                <td>{{ $post->Email }}</td>
-                <td>{{ $post->Amount }}</td>
-                <td style="max-width: 400px">{{ $post->Message }}</td>
+                <td>{{ $post->name }}</td>
+                <td>{{ $post->email }}</td>
+                <td>{{ $post->amount }}</td>
+                <td style="max-width: 400px">{{ $post->message }}</td>
                 <td>{{ $post->created_at->format('Y-m-d') }}</td>
             </tr>
             @endforeach
@@ -40,18 +40,18 @@
 @section ('HighCharts')
 
 
-<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
 <div id="container"></div>
 
 <script>
-    var amountDate =;
+    var amountDate = <?php echo json_encode($amountDate) ?>;
     Highcharts.chart('container', {
         title: {
             text: "Donation statistics"
         },
         xAxis: {
-            categories: ['january', 'february', 'march']
+            categories: ['january', 'february', 'march', 'april']
         },
         yAxis: {
             title: "Amount"
@@ -61,7 +61,7 @@
             data: amountDate
         }],
     });
-</script> -->
+</script>
 
 
 
