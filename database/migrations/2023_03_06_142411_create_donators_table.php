@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->double('amount');
-            $table->text('message');
+            $table->double('amount', 3, 2);
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
