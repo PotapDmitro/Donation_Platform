@@ -45,13 +45,15 @@
 <div id="container"></div>
 
 <script>
-    var amountDate = <?php echo json_encode($amountDate) ?>;
+    var amountDate = <?php echo json_encode($result) ?>;
+    console.log(amountDate);
     Highcharts.chart('container', {
+
         title: {
             text: "Donation statistics"
         },
         xAxis: {
-            categories: ['january', 'february', 'march', 'april']
+            // categories: ['january', 'february', 'march', 'april']
         },
         yAxis: {
             title: "Amount"
@@ -62,6 +64,7 @@
         }],
     });
 </script>
+
 
 
 
