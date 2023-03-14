@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'App\Http\Controllers\Dashboard@index');
+Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+Route::get('/create', 'App\Http\Controllers\DonatorController@create')->name('post.create');
+Route::post('/create', 'App\Http\Controllers\DonatorController@store')->name('post.store');
