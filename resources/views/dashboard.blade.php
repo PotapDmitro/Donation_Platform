@@ -81,6 +81,9 @@
 
 
 @section('widget')
-
-
+<div class="conteiner" style="display: flex; justify-content: space-between;">
+    <x-widget info="Top Donator" amount="123" name="Pasha"></x-widget>
+    <x-widget info="Last Month" amount="777" name=""></x-widget>
+    <x-widget info="All time amounth" amount="777" name=""></x-widget>
+</div>
 @endsection
