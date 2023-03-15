@@ -39,34 +39,42 @@
 
 @section ('HighCharts')
 
-
-<script src="https://code.highcharts.com/highcharts.js"></script>
-
-<div id="container"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart"></div>
 
 <script>
     var amountDate = <?php echo json_encode($result) ?>;
-    console.log(amountDate);
-    Highcharts.chart('container', {
 
-        title: {
-            text: "Donation statistics"
-        },
-        xAxis: {
-            // categories: ['january', 'february', 'march', 'april']
-        },
-        yAxis: {
-            title: "Amount"
-        },
-        series: [{
-            name: "Amount",
-            data: amountDate
-        }],
+    google.charts.load('current', {
+        packages: ['corechart', 'line']
     });
+
+    var ress = [];
+    for (let [key, value] of Object.entries(amountDate)) {
+        ress.push([`${key}`, Number(`${value}`)]);
+    }
+
+    google.charts.setOnLoadCallback(drawBackgroundColor);
+
+    function drawBackgroundColor() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Date');
+        data.addColumn('number', 'Amount');
+        data.addRows(ress);
+
+        var options = {
+            hAxis: {
+                title: 'Date'
+            },
+            vAxis: {
+                title: 'Amount'
+            },
+            backgroundColor: '#ffffff'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart'));
+        chart.draw(data, options);
+    }
 </script>
-
-
-
-
 
 @endsection
