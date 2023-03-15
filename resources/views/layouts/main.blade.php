@@ -11,11 +11,10 @@
 
 <body style="margin: 100px 300px 300px; max-width: 1080px">
 
-
+    @yield('widget')
     @yield('HighCharts')
     @yield('content')
     @yield('button-create')
-
 
 
 

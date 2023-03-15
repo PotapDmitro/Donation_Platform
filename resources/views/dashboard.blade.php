@@ -78,3 +78,23 @@
 </script>
 
 @endsection
+
+
+@section('widget')
+<div class="row" style="display: flex; justify-content: space-between">
+    <div class="text-bg-success p-3" style="width: 300px; height: 150px">
+        <p>Top donator</p>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="text-bg-success p-3" style="width: 300px; height: 150px">
+        <p>Last Month Amonth</p>
+        <p></p>
+    </div>
+    <div class="text-bg-success p-3" style="width: 300px; height: 150px">
+        <p>All time amonth</p>
+        <p></p>
+    </div>
+</div>
+
+@endsection
