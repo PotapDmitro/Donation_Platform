@@ -11,8 +11,8 @@ class Widget extends Component
 
     public function __construct(
         public $amount,
-        public $name,
         public $info,
+        public $name = '',
     ) {
     }
 

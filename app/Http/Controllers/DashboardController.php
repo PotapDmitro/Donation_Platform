@@ -18,8 +18,39 @@ class DashboardController extends Controller
         foreach ($amountDate as $date) {
             $result[$date->date] = $date->amount;
         };
-        // dd($result);
+        // All time amounth
+        $sumData = DB::table('donators')->select(DB::raw("SUM(amount) as sumData"))
+            ->get();
+        $resultSum = [];
+        foreach ($sumData as $amountSum) {
+            $resultSum = $amountSum;
+        }
+        //Top Donator (amount)
+        $maxDonator = DB::table('donators')->select(DB::raw("max(amount) as amountDonator"))
+            ->get();
+        $maxAmount = [];
+        foreach ($maxDonator as $resMaxAmount) {
+            $maxAmount = $resMaxAmount;
+        }
+        //Top Donator (name)
+        $nameDonator = DB::table('donators')->select(DB::raw("name as nameDonator"))
+            ->orderByDesc("amount")
+            ->limit(1)
+            ->get()->toArray();
+        $resultName = [];
+        foreach ($nameDonator as $AmMaxName) {
+            $resultName = $AmMaxName;
+        }
+        //Last Month
+        $lastMonth = DB::table('donators')->select(DB::raw("amount"))
+            ->whereMonth("created_at", now()->endOfMonth())
+            ->get()->toArray();
+        $resultSumMonth = [];
+        foreach ($lastMonth as $resultMonth) {
+            $resultSumMonth[] += $resultMonth->amount;
+        }
+        $monthRess = array_sum($resultSumMonth);
         $posts = Donator::paginate(10);
-        return view('dashboard', compact('posts', 'result'));
+        return view('dashboard', compact('posts', 'result', 'resultSum', 'maxAmount', 'resultName', 'resultSumMonth', 'monthRess'));
     }
 }

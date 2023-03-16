@@ -82,8 +82,8 @@
 
 @section('widget')
 <div class="conteiner" style="display: flex; justify-content: space-between;">
-    <x-widget info="Top Donator" amount="123" name="Pasha"></x-widget>
-    <x-widget info="Last Month" amount="777" name=""></x-widget>
-    <x-widget info="All time amounth" amount="777" name=""></x-widget>
+    <x-widget info="Top Donator" amount="{{$maxAmount->amountDonator}}" name="{{$resultName->nameDonator}}"></x-widget>
+    <x-widget info="Last Month Amount" amount="{{$monthRess}}"></x-widget>
+    <x-widget info="All time amounth" amount="{{$resultSum->sumData}}"></x-widget>
 </div>
 @endsection
