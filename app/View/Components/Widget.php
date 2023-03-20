@@ -8,14 +8,12 @@ use Illuminate\View\Component;
 
 class Widget extends Component
 {
-
     public function __construct(
         public $amount,
         public $info,
         public $name = '',
     ) {
     }
-
 
     /**
      * Get the view / contents that represent the component.

@@ -10,9 +10,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
-        $amountDate = DB::table('donators')->select(DB::raw("DATE_FORMAT(created_at, '%d-%m-%Y') as date, SUM(amount) as amount"))
-            ->groupBy(DB::raw("DATE_FORMAT(created_at, '%d-%m-%Y')"))
+        $amountDate = Donator::selectRaw("DATE_FORMAT(created_at, '%d-%m-%Y') as date, SUM(amount) as amount")
+            ->groupByRaw("DATE_FORMAT(created_at, '%d-%m-%Y')")
             ->get()->toArray();
         $result = [];
         foreach ($amountDate as $date) {
@@ -26,7 +25,7 @@ class DashboardController extends Controller
             $resultSum = $amountSum;
         }
         //Top Donator (amount)
-        $maxDonator = DB::table('donators')->select(DB::raw("max(amount) as amountDonator"))
+        $maxDonator = Donator::select(DB::raw("max(amount) as amountDonator"))
             ->get();
         $maxAmount = [];
         foreach ($maxDonator as $resMaxAmount) {
