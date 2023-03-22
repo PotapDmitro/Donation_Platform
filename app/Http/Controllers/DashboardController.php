@@ -12,7 +12,7 @@ class DashboardController extends Controller
     {
         $amountDate = Donator::selectRaw("DATE_FORMAT(created_at, '%d-%m-%Y') as date, SUM(amount) as amount")
             ->groupByRaw("DATE_FORMAT(created_at, '%d-%m-%Y')")
-            ->get()->toArray();
+            ->get();
         $result = [];
         foreach ($amountDate as $date) {
             $result[$date->date] = $date->amount;
