@@ -43,7 +43,7 @@
 <div id="chart"></div>
 
 <script>
-    var amountDate = <?php echo json_encode($result) ?>;
+    var amountDate = <?php echo json_encode($chartData) ?>;
 
     google.charts.load('current', {
         packages: ['corechart', 'line']
@@ -82,8 +82,8 @@
 
 @section('widget')
 <div class="conteiner" style="display: flex; justify-content: space-between;">
-    <x-widget info="Top Donator" amount="{{$maxAmount->amountDonator}}" name="{{$resultName->nameDonator}}"></x-widget>
-    <x-widget info="Last Month Amount" amount="{{$monthRess}}"></x-widget>
-    <x-widget info="All time amounth" amount="{{$resultSum->sumData}}"></x-widget>
+    <x-widget info="Top Donator" amount="{{$maxAmount}}" name="{{$resultName}}"></x-widget>
+    <x-widget info="Last Month Amount" amount="{{$resultSumMonth}}"></x-widget>
+    <x-widget info="All time amounth" amount="{{$resultSum}}"></x-widget>
 </div>
 @endsection
