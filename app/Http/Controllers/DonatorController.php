@@ -19,4 +19,13 @@ class DonatorController extends Controller
         Donator::create($data);
         return redirect()->route('dashboard');
     }
+
+    /**
+     * Testing controller
+     */
+    public function testStore(StoreDonatorRequest $request)
+    {
+        $data = $request->validated();
+        Donator::create($data);
+    }
 }

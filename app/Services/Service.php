@@ -30,7 +30,7 @@ class Service
      *
      * @return float
      */
-    public function allSum(): float
+    public function allSum(): ?float
     {
         return $this->widgetRepository->allAmount()->sumData;
     }

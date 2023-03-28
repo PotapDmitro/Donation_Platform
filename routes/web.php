@@ -20,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 Route::get('/posts/create', 'App\Http\Controllers\DonatorController@create')->name('post.create');
 Route::post('/create', 'App\Http\Controllers\DonatorController@store')->name('post.store');
+
+/**
+ * Testing
+ */
+Route::post('/test/donators', 'App\Http\Controllers\DonatorController@testStore');
